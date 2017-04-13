@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.maxim.soundapp.MainActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:visibility="visible"
+    tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/start_rec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/start"
+        android:onClick="startMicRec"
+        android:layout_below="@+id/db_text_view"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="224dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/stop_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        android:onClick="stopMicRec"
+        android:layout_alignBaseline="@+id/start_rec"
+        android:layout_alignBottom="@+id/start_rec"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="76dp" />
+
+    <TextView
+        android:id="@+id/db_text_view"
+        android:layout_width="202dp"
+        android:layout_height="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp" />
+
+</RelativeLayout>
